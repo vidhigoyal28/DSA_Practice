@@ -10,16 +10,16 @@ public:
         }
         int left =0;
         int have =0;
-        int needCount = t.size();
+        int required = need.size();
         int minLen = INT_MAX;
         int start = 0;
         for(int right = 0 ; right < s.size();right++){
             char c = s[right];
             window[c]++;
-            if(need.count(c) && window[c] <= need[c]){
+            if(need.count(c) && window[c] == need[c]){
                 have++;
             }
-            while(have == needCount){
+            while(have == required){
                 if(right-left+1 < minLen){
                     minLen = right-left+1;
                     start =left;
